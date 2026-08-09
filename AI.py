@@ -1,8 +1,17 @@
 import numpy as np
+<<<<<<< HEAD
 import nnfs
 from nnfs.datasets import spiral_data
 
 nnfs.init()
+=======
+
+np.random.seed(0)
+
+X =      [[1, 2, 3, 2.5],
+          [2.0, 5.0, -1.0, 2.0],
+          [-1.5, 2.7, 3.3, -0.8]]
+>>>>>>> 8b27d13b553db10ff78ba66da7d32f170444d9d6
 
 class Layer_Dense:
     def __init__(self, n_inputs, n_neurons):
@@ -11,6 +20,7 @@ class Layer_Dense:
     def forward(self, inputs):
         self.output = np.dot(inputs, self.weights) + self.biases
 
+<<<<<<< HEAD
 
 class Activation_ReLU:
     def forward(self, inputs): 
@@ -38,3 +48,10 @@ dense2.forward(activation1.output)
 activation2.forward(dense2.output)
 
 print(activation2.output[:5])
+=======
+layer1 = Layer_Dense(4,5)
+layer2 = Layer_Dense(5,2)
+layer1.forward(X)
+layer2.forward(layer1.output)
+print (layer2.output)
+>>>>>>> 8b27d13b553db10ff78ba66da7d32f170444d9d6
